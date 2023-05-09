@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'todo_app',
-    'users',
+    'account',  # account 추가
 ]
 
 MIDDLEWARE = [
@@ -125,4 +125,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'account.User' # 앞으로 사용할 User는 account/models.py에 정의한 User Model이 됨
