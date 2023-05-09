@@ -18,7 +18,7 @@ class TodoUpdate(UpdateView):
     model = Todo
     fields = ['todo', 'description', 'important']
 
-    template_name = 'todo_app/todo_update_form.html' # 이건 왜 한거지?
+    template_name = 'todo_app/todo_update_form.html'
 
 
 class TodoCreate(LoginRequiredMixin, CreateView):
