@@ -37,9 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    'allauth',
-    'allauth.account',
 
     'todo_app',
     'accounts',  # account 추가
