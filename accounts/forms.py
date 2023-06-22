@@ -1,15 +1,27 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import CustomUser
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from .models import User
 
-class CustomUserCreationForm(UserCreationForm):
+class SignUpForm(UserCreationForm):
+    email = forms.EmailField(max_length=255, help_text='Enter a valid email address')
+    nickname = forms.CharField(max_length=255, required=True)
+    password1 = forms.CharField(
+            label='Password',
+            widget=forms.PasswordInput(),
+            help_text='Your password must contain at least 8 characters.',
+        )
+    
+    password2 = forms.CharField(
+        label='Password confirmation',
+        widget=forms.PasswordInput(),
+        help_text='Enter the same password as before, for verification.',
+    )
 
     class Meta:
-        model = CustomUser
-        fields = ('username', 'email')
+        model = User
+        fields = ['email', 'nickname', 'password1', 'password2']
 
-class CustomUserChangeForm(UserChangeForm):
-
+class SignInForm(AuthenticationForm):
     class Meta:
-        model = CustomUser
-        fields = ('username', 'email')
+        model = User
+        fields = ['email', 'password']

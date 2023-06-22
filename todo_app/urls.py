@@ -9,6 +9,6 @@ urlpatterns = [
     path('delete_todo/<int:pk>/', views.DeleteTodo),
     path('completed_todo/<int:pk>/', views.CompletedTodo),
 
-    path('index/', views.index)
+    path('index/', views.index, name="index")
 
 ]
