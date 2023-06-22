@@ -8,6 +8,12 @@
 	<link rel="stylesheet" href="{% static 'todo_app/bootstrap/bootstrap.min.css' %}">
 </head>
 <body>
+	{% if user.is_authenticated %}
+    	<a href="/accounts/logout" class="btn btn-primary">Logout</a>
+	{% else %}
+		<a href="/accounts/signup" class="btn btn-primary">회원가입</a><br>
+		<a href="/accounts/signin" class="btn btn-primary">Login</a>
+	{% endif %}
 	<h1>Edit Todos</h1>
 	<hr/>
 	<form method='post' enctype="multipart/form-data" action="">

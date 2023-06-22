@@ -24,6 +24,7 @@ class TodoUpdate(UpdateView):
 class TodoCreate(LoginRequiredMixin, CreateView):
     model = Todo
     fields = ['todo', 'description', 'important']
+    login_url = '/accounts/signin/'  # Custom login URL
 
 
 def Todos(request):
