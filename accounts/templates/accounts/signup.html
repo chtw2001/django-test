@@ -4,11 +4,11 @@
     <title>Sign Up</title>
 </head>
 <body>
-    <h2>Sign Up</h2>
+    <h2>Sign Up (회원가입)</h2>
     <form method="POST">
         {% csrf_token %}
-        {% comment %} {{ form.as_p }} {% endcomment %}
-        <p>
+        {{ form.as_p }}
+        {% comment %} <p>
             <label for="{{ form.email.id_for_label }}">Email:</label>
             {{ form.email }}
         </p>
@@ -23,7 +23,7 @@
         <p>
             <label for="{{ form.nickname.id_for_label }}">Nickname:</label>
             {{ form.nickname }}
-        </p>
+        </p> {% endcomment %}
         <button type="submit">Sign Up</button>
     </form>
 </body>

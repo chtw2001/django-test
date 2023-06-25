@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'todo_app',
-    'accounts',  # account 추가
+    'accounts',  # accounts 추가
 ]
 
 MIDDLEWARE = [
