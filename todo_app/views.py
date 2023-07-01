@@ -21,10 +21,10 @@ class TodoUpdate(UpdateView):
     template_name = 'todo_app/todo_update_form.html'
 
 
-class TodoCreate(LoginRequiredMixin, CreateView):
-    model = Todo
-    fields = ['todo', 'description', 'important']
-    login_url = '/accounts/signin/'  # Custom login URL
+class TodoCreate(LoginRequiredMixin, CreateView): # LoginRequiredMixin을 사용하였기 때문에
+    model = Todo                                  # 로그인이 필요함. 하지만 로그인되지 않았다면
+    fields = ['todo', 'description', 'important'] # login_url로 이동하도록 함. 기본 설정은 다르게
+    login_url = '/accounts/signin/'  # Custom login URL # 되어있어서 직접 지정해주어야 함
 
 
 def Todos(request):
