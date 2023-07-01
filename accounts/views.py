@@ -25,7 +25,7 @@ def signin(request):
             user = authenticate(request, email=email, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('index')  # Redirect to the home page after successful login
+                return redirect('todo_list')  # Redirect to the home page after successful login
             else:
                 messages.error(request)
             

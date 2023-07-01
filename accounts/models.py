@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import (
-    AbstractBaseUser, BaseUserManager
+    AbstractBaseUser, BaseUserManager, AbstractUser
 )
 class UserManager(BaseUserManager):
     def create_user(self, email, password, staff=False, admin=False, active=True):
@@ -18,13 +18,13 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)   # 설정된 데이터베이스(DB)에 user객체 저장
         return user                 # User Model에 user(객체)를 넘김
         
-    def create_staffuser(self, email, password):
-        user = self.create_user(
-            email,
-            password,
-            staff = True
-        )
-        return user
+    # def create_staffuser(self, email, password):
+    #     user = self.create_user(
+    #         email,
+    #         password,
+    #         staff = True
+    #     )
+    #     return user
     
     def create_superuser(self, email, password):
         user = self.create_user(
